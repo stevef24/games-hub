@@ -1,5 +1,4 @@
-import useData from "./useData";
-
+import genre from "../../data/genre";
 type FetchGenresResponse = {
 	count: number;
 	results: Genre[];
@@ -11,6 +10,6 @@ export type Genre = {
 	image_background: string;
 };
 
-const useGenres = () => useData<Genre>("/genres");
+const useGenres = () => ({ data: genre, isLoading: false, error: null });
 
 export default useGenres;
